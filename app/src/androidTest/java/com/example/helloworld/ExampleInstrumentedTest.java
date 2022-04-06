@@ -45,15 +45,6 @@ public class ExampleInstrumentedTest {
 //    }
     @Test
     public void checkView() {
-        // Context of the app under test.
-    //        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-    //        assertEquals("com.example.helloworld", appContext.getPackageName());
-//        onView(withText("Hello World!")).check(matches(isDisplayed()));
-        //openActionBarOverflowOrOptionsMenu(InstrumentationRegistry.getInstrumentation().getTargetContext());
-
-//        onView()
-//                .check(matches(isDisplayed()));
-//        onView(hasSibling(withText("Hello")));
-        onView(withId(R.id.textView)).check(matches(withText("Hello Worlddd!")));
+        onView(withId(R.id.textView)).check(matches(withText("Hello World!")));
     }
 }
