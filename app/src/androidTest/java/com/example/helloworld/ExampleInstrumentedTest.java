@@ -47,7 +47,7 @@ public class ExampleInstrumentedTest {
 //
 //    }
     @Before
-    public static void beforeClass() {
+    public void beforeClass() {
         IdlingPolicies.setMasterPolicyTimeout(60, TimeUnit.SECONDS);
         IdlingPolicies.setIdlingResourceTimeout(60, TimeUnit.SECONDS);
     }
