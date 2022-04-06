@@ -15,6 +15,7 @@ import android.content.Context;
 import android.widget.Toolbar;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.test.espresso.IdlingPolicies;
 import androidx.test.rule.ActivityTestRule;
 
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -30,6 +31,8 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.*;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -43,6 +46,12 @@ public class ExampleInstrumentedTest {
 //    public void setup(){
 //
 //    }
+    @Before
+    public static void beforeClass() {
+        IdlingPolicies.setMasterPolicyTimeout(60, TimeUnit.SECONDS);
+        IdlingPolicies.setIdlingResourceTimeout(60, TimeUnit.SECONDS);
+    }
+
     @Test
     public void checkView() {
         onView(withId(R.id.textView)).check(matches(withText("Hello World!")));
