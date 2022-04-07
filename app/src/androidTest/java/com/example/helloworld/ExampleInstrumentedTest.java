@@ -54,6 +54,6 @@ public class ExampleInstrumentedTest {
 
     @Test
     public void checkView() {
-        onView(withId(R.id.textView)).check(matches(withText("Hello Worlddd!")));
+        onView(withId(R.id.textView)).check(matches(withText("Hello World!")));
     }
 }
